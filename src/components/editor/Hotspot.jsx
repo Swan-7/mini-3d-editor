@@ -1,6 +1,6 @@
 import { Html } from "@react-three/drei"
 
-export default function Hotspot({ id, position, label, onEdit, onRemove }) {
+export default function Hotspot({ position, label }) {
   return (
     <group position={position}>
       {/* Marker sphere */}

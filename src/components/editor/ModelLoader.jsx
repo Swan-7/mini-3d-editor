@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useLoader, useThree } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { fitObjectToSize } from '../../utils/geometry'
@@ -13,7 +13,7 @@ export default function ModelLoader({ url, onPointerDown }){
 
     useEffect(() => {
         if(!gltf) return
-        const { scale, center } = fitObjectToSize(gltf.scene, 1.5)
+        const { scale } = fitObjectToSize(gltf.scene, 1.5)
         
         camera.position.set(0, 0, 3 / scale)
         camera.updateProjectionMatrix()
