@@ -17,13 +17,24 @@ export default function App(){
 
   // Unload handler: clears both model and hotspots
   const handleUnload = () => {
+     if (modelUrl?.startsWith('blob:')) {
+      URL.revokeObjectURL(modelUrl);
+    }
     setModelUrl(null)
     clearHotspots()
   }
 
+  const handleSetModel = (url) => {
+     if (modelUrl?.startsWith('blob:')) {
+      URL.revokeObjectURL(modelUrl);
+    }
+    clearHotspots();
+    setModelUrl(url);
+  }
+
   return (
     <div style={{height: '100vh', position:'relative'}}>
-      <Topbar onFile={setModelUrl} onUnload={handleUnload} />
+      <Topbar onFile={handleSetModel} onUnload={handleUnload} />
       <EditorCanvas
         modelUrl={modelUrl}
         hotspots={hotspots}

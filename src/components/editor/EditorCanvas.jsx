@@ -48,8 +48,8 @@ export default function EditorCanvas({
   )
 
   return (
-    <div className="flex flex-col bg-gray-900 text-gray-100 relative w-full h-screen overflow-hidden">
-      <div className="flex flex-1 overflow-hidden">
+    <div className="flex flex-col bg-gray-900 text-gray-600 relative w-full h-screen overflow-hidden">
+      <div className="flex flex-1 flex-col sm:flex-row overflow-hidden">
         {/* 3D Canvas */}
         <div className="flex-1 relative min-w-0">
           <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
@@ -78,7 +78,7 @@ export default function EditorCanvas({
               />
             ))}
 
-            <OrbitControls enableDamping enablePan />
+            <OrbitControls makeDefault enableDamping enablePan />
 
             {/* Project 3D → screen coords */}
             <HotspotProjector hotspots={hotspots} setLabels={setLabels} />
@@ -89,7 +89,7 @@ export default function EditorCanvas({
         </div>
 
         {/* Sidebar */}
-        <aside className="w-80 shrink-0 p-4 overflow-y-auto overflow-x-hidden bg-white text-gray-800 shadow-xl border-l border-gray-200">
+        <aside className="w-80 shrink-0 p-4 overflow-y-auto overflow-x-hidden bg-white text-brand-700 shadow-xl border-l border-brand-500">
           <HotspotUI
             hotspots={hotspots}
             onUpdate={updateHotspot}

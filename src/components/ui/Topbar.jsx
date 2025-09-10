@@ -22,11 +22,11 @@ export default function Topbar({ onFile, onUnload }) {
   }
 
   return (
-    <header className="flex items-center justify-between px-4 py-2 bg-gray-800 shadow-md">
+    <header className="flex items-center justify-between px-4 py-2 bg-brand-900 text-white shadow-md">
       <h1 className="text-lg font-semibold text-gray-100">Mini 3D Editor</h1>
       <div className="flex gap-2 items-center">
         <button
-          className="px-3 py-1 rounded-md bg-blue-600 hover:bg-blue-700 text-white text-sm"
+          className="bg-[#3085fc] hover:bg-blue-700 px-3 py-1 rounded-md text-white text-sm"
           onClick={() => fileRef.current?.click()}
         >
           Import .glb
